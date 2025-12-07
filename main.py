@@ -23,6 +23,10 @@ st.caption('โปรแกรมให้คำแนะนำในการ�
 #    raise ValueError("API key not found. Please set the GOOGLE_API_KEY environment variable.")
 if "GOOGLE_API_KEY" in st.secrets:
     api_key = st.secrets["GOOGLE_API_KEY"]
+else:
+    # 💥 สำคัญ: แจ้งข้อผิดพลาดและหยุดแอปหากไม่พบคีย์
+    st.error("Authentication Error: GOOGLE_API_KEY secret is missing. Please set the key in Streamlit Cloud Settings.")
+    st.stop() # หยุดการทำงานของแอปที่จุดนี้
     
 # Configure the genai library with your API key
 genai.configure(api_key=api_key)
