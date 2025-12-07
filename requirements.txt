@@ -1,12 +1,7 @@
 streamlit
 pandas
 numpy
-re
-google.generativeai
-os
-json
-plotly.express
-pythainlp.tokenize
-word_tokenize
-matplotlib.pyplot
+google-generativeai
+plotly-express
 pythainlp
+matplotlib
