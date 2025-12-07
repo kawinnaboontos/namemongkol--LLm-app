@@ -18,7 +18,7 @@ st.caption('โปรแกรมให้คำแนะนำในการ�
 
 
 #Authenticate with the API key from an environment variable
-api_key = ""
+api_key = "AIzaSyCp6J-YF7Q8L7LB33Up7KXqYENqoPZpKXk"
 if not api_key:
     raise ValueError("API key not found. Please set the GOOGLE_API_KEY environment variable.")
 
