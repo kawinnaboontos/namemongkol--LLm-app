@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+re
+google.generativeai as genai
+os
+json
+plotly.express
+pythainlp.tokenize
+word_tokenize
+matplotlib.pyplot
+pythainlp
