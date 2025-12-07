@@ -2,7 +2,7 @@ streamlit
 pandas
 numpy
 re
-google.generativeai as genai
+google.generativeai
 os
 json
 plotly.express
