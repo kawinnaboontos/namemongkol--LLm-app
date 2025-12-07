@@ -25,8 +25,8 @@ if "GOOGLE_API_KEY" in st.secrets:
     api_key = st.secrets["GOOGLE_API_KEY"]
     
 # Configure the genai library with your API key
-genai.configure(api_key=api_key)
-
+#genai.configure(api_key=api_key)
+genai.configure(api_key=GOOGLE_API_KEY)
 #Select the model
 # The "gemini-2.5-flash" model is a great, fast, and cost-effective choice.
 #model = genai.GenerativeModel("gemini-2.5-flash-lite")
