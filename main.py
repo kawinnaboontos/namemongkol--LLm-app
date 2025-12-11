@@ -16,17 +16,17 @@ import pythainlp
 st.title('🔮Tangdee ชื่อดี ชีวิตปัง')
 st.caption('โปรแกรมให้คำแนะนำในการตั้งชื่อและเปลี่ยนชื่อ และทำนายดวงชะตาจากชื่อของคุณ โดยใช้ตำราทักษา ตำราโหราศาสตร์ด้านการตั้งชื่อที่เก่าแก่ที่สุดของไทย By กวินนา บุญทศ')
 
+st.sidebar.header("🔐 ตั้งค่า API Key")
+api_key = st.sidebar.text_input(
+    "ใส่ Google API Key ของคุณที่นี่",
+    type="password",
+    placeholder="เช่น AIzaSyB........"
+)
 
-#Authenticate with the API key from an environment variable
-#api_key = ""
-#if not api_key:
-#    raise ValueError("API key not found. Please set the GOOGLE_API_KEY environment variable.")
-if "GOOGLE_API_KEY" in st.secrets:
-    api_key = st.secrets["GOOGLE_API_KEY"]
-else:
-    # 💥 สำคัญ: แจ้งข้อผิดพลาดและหยุดแอปหากไม่พบคีย์
-    st.error("Authentication Error: GOOGLE_API_KEY secret is missing. Please set the key in Streamlit Cloud Settings.")
-    st.stop() # หยุดการทำงานของแอปที่จุดนี้
+# ถ้าไม่มี API key → หยุดทุกอย่าง
+if not api_key:
+    st.warning("⚠ กรุณาใส่ API Key ก่อนใช้งานระบบ")
+    st.stop()
     
 # Configure the genai library with your API key
 genai.configure(api_key=api_key)
